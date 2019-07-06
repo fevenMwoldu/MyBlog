@@ -1,2 +1,19 @@
-{% extends 'base.html'%}
-<h1>List of Blogs</h1>
+{% extends 'base.html'%} {% block content %}
+<table class="table" align="center">
+    <thead>
+
+        <th>
+            <h1>List of Quotessss</h1>
+        </th>
+
+
+    </thead>
+    <tbody>
+        <h1>{{ quotes.author }}</h1>
+        <h1>{{ quotes.id }}</h1>
+        <h1>{{ quotes.quote }}</h1>
+        <h1>{{ quotes.permalink }}</h1>
+
+    </tbody>
+</table>
+{% endblock %}
