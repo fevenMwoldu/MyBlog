@@ -1,0 +1,15 @@
+{% extends 'base.html'%} {% block content %}
+
+<div class="card-deck">
+    {% for quote in quotes %}
+
+    <h1>{{ quote['author'] }}</h1>
+    <h1>{{ quote['id'] }}</h1>
+    <h1>{{ quote['quote'] }}</h1>
+    <h1>{{ quote['permalink'] }}</h1>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}
