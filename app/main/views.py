@@ -1,5 +1,7 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from . import main
+from ..requests import get_quotes
+
 
 posts = [
     {
@@ -24,7 +26,8 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    return render_template('index.html')
+    quotes = get_quotes()
+    return render_template('index.html',quotes=quotes)
 
 @main.route('/home')
 def home():
@@ -41,3 +44,14 @@ def about():
     View root page function that returns the index page and its data
     '''
     return render_template('about.html',title='About')
+
+@main.route('/quotes/<string:quote_id>')
+def quotes(quote_id):
+    '''
+    View Newse page function that returns the News details page and its data
+    '''
+
+    # Retrieve articles for source_id
+    quotes = get_quotes(quote_id)
+
+    return render_template('quotes.html', quotes=quotes)
