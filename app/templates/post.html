@@ -1,0 +1,47 @@
+{% extends 'base.html'%} {% import 'bootstrap/wtf.html' as wtf%} {% block content %}
+
+<style type="text/css">
+    .bgimg {
+        background-image: url("../static/photos/refresh-my-heart-in-christ-vjq6k4mz-884b8f7af4b0a966b54b6816140570cb.jpg");
+        width: 1845px;
+        height: 600px;
+    }
+    
+    h1,
+    h3 {
+        text-align: center;
+        color: black;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 150px;
+    }
+</style>
+
+<h2>{{ post.topic }}</h2>
+
+<p> {{ post.content }}</p>
+
+<p> {{ post.posted_on }}</p>
+
+<p>Comments:</p>
+<table border="1">
+    {% for comment in post.comments %}
+    <tr>
+        <td>{{ comment.comment }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8">
+
+            {{wtf.quick_form(CommentForm)}}
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% endblock %}
