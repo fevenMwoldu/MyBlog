@@ -1,19 +1,73 @@
-{% extends 'base.html'%} {% block content %}
+{% extends 'base.html'%} {% import 'bootstrap/wtf.html' as wtf%} {% block content %}
+
+<style type="text/css">
+    .bgimg {
+        background-image: url("../static/photos/refresh-my-heart-in-christ-vjq6k4mz-884b8f7af4b0a966b54b6816140570cb.jpg");
+        width: 1845px;
+        height: 600px;
+    }
+    
+    h1,
+    h3 {
+        text-align: center;
+        color: black;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 150px;
+    }
+</style>
+<div class="bgimg">
+    <h1>{{ quotes.quote }}</h1>
+    <h3>{{ quotes.author }}</h3>
+
+</div>
+
+
+
 <table class="table" align="center">
     <thead>
 
         <th>
-            <h1>List of Quotessss</h1>
+            <h1>posts</h1>
         </th>
 
 
     </thead>
-    <tbody>
-        <h1>{{ quotes.author }}</h1>
-        <h1>{{ quotes.id }}</h1>
-        <h1>{{ quotes.quote }}</h1>
-        <h1>{{ quotes.permalink }}</h1>
+    {% for post in posts %}
+    <tr>
+        <td>
+            <h3><a href="/post/{{ post.id }}">{{ post.topic }}</a></h3>
+        </td>
+    </tr>
+    <tr>
+        <td>{{ post.content }}</td>
+    </tr>
+    <tr>
+        <td>{{ post.posted_on}}</td>
+    </tr>
+    <div class="card" style="width:500px">
+        <img img class="card-img-top" src="../static/photos/god-does-not-forgive-excuses-evhz4rq6-8e3630b2f859dd6529159b99884e370c.jpg" width="500px" height="300px" alt="Card image">
+        <div class="card-img-overlay">
+            <h4 class="card-title"><a href="/post/{{ post.id }}">{{ post.topic }}</a></h4>
+            <p class="card-text">{{ post.content }}</p>
+            <a href="#" class="btn btn-primary">{{ post.posted_on}}</a>
+        </div>
+    </div>
 
-    </tbody>
+    {% endfor %}
 </table>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8">
+
+            {{wtf.quick_form(SubscriptionForm)}}
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
 {% endblock %}

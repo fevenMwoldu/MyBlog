@@ -4,16 +4,14 @@ Fri 5, June 2019 By ** Feven Moghes Weldu **
 ## Descrption
 A web application or an informational website displaying information in the reverse chronological order, with latest posts appearing first.
 
-This project was generated with [Python CLI]version 3.7
-
 ## BDD(Behaviour Driven development)
-When : A user wants to get the list of News sources, the application should be able to display it.
+When : A writter signs in and creates a blog and posts,
 
-Then : Then When a selected News source is clicked it should display the list of articles it have. when those articles are inturn clicked they should display the full article on the source website.
+Then : Then users are able to receive email alert on their websites , so that they are able to see and comment on it.
 
 | Behaviour                  | Input                                  | Output                              |
 |----------------------------|----------------------------------------|-------------------------------------|
-| Displays information in the|Sign in as a writter and  create blogs  |Blog posts are displayed to the users|
+|Displays information in the |Sign in as a writter and  create blogs  |Blog posts are displayed to the users|
 |reverse chronological order |and add posts, where the users can see  |and user can read them.              |
 |with lates posts appearing  |and comment on.                         |The writer of the blog can delete com|
 |first.                      |                                        |ents and update and delete blogs.
@@ -31,6 +29,11 @@ Then following onscreen instructions to operate the app.
 No bugs identified yet. If you find a bug please give us your feedback using the contact details provided below.
 
 Technologies Used Python3.7 Visual Studio Code Ubuntu
+
+## Technology
+This project was generated with [Python CLI]version 3.7
+
+An inline CSS is used
 
 ## Live Link
 https://github.com/fevenMwoldu/MyBlog

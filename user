@@ -1,0 +1,282 @@
+CREATE DATABASE watchlist;
+\c watchlist
+\dt
+q/
+/q
+help
+\q
+CREATE DATABASE school;
+\l
+\c school
+CREATE TABLE courses(name varchar,full_time boolean);
+ALTER TABLE courses ADD student_number integer;
+ALTER TABLE courses DROP student_number;
+INSERT INTO courses(name,full_time)VALUES('Advanced Math',True);
+INSERT INTO courses(name,full_time)VALUES('Literature',True);
+INSERT INTO courses(name,full_time)VALUES('Computer science',True);
+SELECT name FROM courses;
+SELECT * FROM courses;
+ALTER TABLE course ADD id serial PRIMARY KEY;
+DELETE FROM courses * ;
+ALTER TABLE course ADD id serial PRIMARY KEY;
+ALTER TABLE courses ADD id serial PRIMARY KEY;
+alter user feven password 'fev'
+c\
+\l
+\d
+ALTER USER feven PASSWORD '123';
+select * from users;
+select * from 'users'
+select * from 'users';
+select * from users;
+select * from Users;
+select * from roles;
+select * from users;
+select * from roles;
+\l
+\dt
+\dt watchilst
+\c watchlist ;
+\dt
+select * from roles;
+\c watchlist ;
+select * from users;
+\l
+\dt watchlist
+\c watchlist
+select * from users;
+\c watchlist;
+select * from users;
+\l
+\dt watchlist
+\c watchlist
+\dt
+select * from users;
+ls
+\l
+\dt
+\dt watchlist
+\c watchlist;
+\dt
+select * from users;
+select * from users;
+\c watchlist
+\dt
+select * from users;
+\c watchlist
+select * from users
+\c watchlist;
+select * from users;
+\c watchlist;
+select * from users;
+\c watchlist
+select * from users;
+\c watchlist
+\c watchlist
+select * from users;
+\c watchlist
+select * from users;
+\c watchlist
+select * from users;
+\c watchlist
+select * from users;
+\c watchlist
+select * from reviews
+select * from users;;
+select * from users;
+select * from reviews;
+CREATE DATABASE watchlist_test WITH TEMPLATE watchlist
+\l
+CREATE DATABASE pitches;
+\l
+\c pitches
+\dt
+\dt
+\c pitches 
+\dt
+\l
+select * from 'user';
+\c pitches 
+\dt
+select * from 'user';
+select * from 'User';
+select * from User;
+select * from category;
+select * from 'category';
+select * from category;
+select * from Category;
+\c pitches 
+select * from pitch;
+select * from 'pitch';
+select * from 'Pitch';
+select * from category;
+select * from 'category';
+\q
+\c pitches 
+select * from user;
+select * from category;
+\l
+select * from category;
+select * from 'category';
+select * from category;
+\dt
+select * from user;
+q
+\q
+\l
+\c pitches
+select * from user;
+select * from category;
+\c pitches
+select * from category;
+\?
+\c pitches
+\d category
+\d user;
+\d user
+\c pitches 
+\dt
+\quit
+\c pitches 
+select * from categories;
+\q
+\c pitches 
+show tables;
+\l
+\?
+\dt
+drop table comments;
+drop table pitches;
+drop table roles;
+drop table user;
+drop table users;
+\dt
+drop table profile_photos
+drop table categories;
+drop table profile_photos
+drop table categories;
+\dt
+drop table profile_photos
+\dt
+drop table users;
+\d users
+\?
+\dl users
+\?
+select 'drop table "' || tablename || '" cascade;' 
+from pg_tables where schemaname = 'pitches';
+select 'drop table "' || tablename || '" cascade;' 
+from pg_tables where schemaname = 'pitches';
+\l
+\dt
+drop table users cascade;
+\dt
+drop table categories cascade;
+drop table roles cascade;
+drop table profile_photos cascade;
+\dl
+\dt
+\q
+\c pitches 
+\dt
+select * from user;
+select * from pitch;
+\dt
+select * from category
+;
+\q
+\c pitches 
+\dt
+\q
+\c pitches
+\dt
+exit()
+q
+\q
+\c pitches
+\dt
+\
+\q
+\c pitches
+select * from category;
+\q
+\c pitches
+select * from category;
+\q
+\c pitches
+select * from user;
+\q
+\c pitches
+select * from user;
+select * from category;
+\q
+\c pitches
+select * from user;
+\q
+CREATE DATABASE blog;
+\l
+\l
+\c blog 
+\dt
+ALTER USER feven password '123':
+\q
+\c blog 
+\q
+\l
+drop DATABASE blog;
+\L
+\l
+CREATE DATABASE blog;
+\q
+\c blog
+\dt
+\q
+\c blog
+\dt
+\q
+drop DATABASE blog;
+CREATE DATABASE blog
+CREATE DATABASE blog;
+create DATABASE blog;
+\q
+\c blog
+\dt
+\q
+\c blog
+\dt
+select * from user;
+\q
+\c blog
+\dt
+select * from user;
+select * from users;
+select * from User;
+select * from user;
+\q
+\c blog
+select * from blog;
+\q
+\c blog
+\dt
+select * from comment;
+\q
+\l
+\c blog
+\dt
+select * from user;
+select * from blog;
+select password from user;
+\q
+\c blog
+\dt
+\q
+\c blog
+\dt
+select * from user;
+select * from comment;
+select * from blog.user;
+\dt
+\?
+\d user
+\d 
+\s user

@@ -1,6 +1,12 @@
 from . import db
 from datetime import datetime
+from flask_login import UserMixin
+from . import login_manager
+from werkzeug.security import generate_password_hash,check_password_hash
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class Quotes:
     '''
@@ -15,17 +21,29 @@ class Quotes:
         self.permalink = "http://quotes.stormconsultancy.co.uk/quotes/37" 
 
 
-class User(db.Model):
+class User(UserMixin,db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer,primary_key = True)
     fullname = db.Column(db.String(255))
     email = db.Column(db.String(255), unique=True, index=True)
-    password = db.Column(db.String(255))
+    password_secure = db.Column(db.String(255))
     profile_picture = db.Column(db.String(255))
+
+    @property
+    def password(self):
+        raise AttributeError('You cannnot read the password attribute')
+
+    @password.setter
+    def password(self, password):
+        self.password_secure = generate_password_hash(password)
+
+
+    def verify_password(self,password):
+        return check_password_hash(self.password_secure,password)
    
 
     def __repr__(self):
-        return f'User {self.username}'
+        return f'User {self.fullname}'
 
 class Blog(db.Model):
     __tablename__ = 'blog'
@@ -35,7 +53,7 @@ class Blog(db.Model):
     posts = db.relationship('Post', backref='user', lazy="dynamic")
    
     def __repr__(self):
-        return f'Blog {self.username}'
+        return f'Blog {self.title}'
 
 class Post(db.Model):
     __tablename__ = 'post'
@@ -47,9 +65,13 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"))
     comments = db.relationship('Comment', backref='user', lazy="dynamic")
+
+    def save_post(self):
+        db.session.add(self)
+        db.session.commit()
    
     def __repr__(self):
-        return f'Post {self.username}'
+        return f'Post {self.topic}'
 
 class Comment(db.Model):
     __tablename__ = 'comment'
@@ -57,7 +79,23 @@ class Comment(db.Model):
     comment = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     post_id = db.Column(db.Integer, db.ForeignKey("post.id"))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
    
     def __repr__(self):
-        return f'Comment {self.username}'
+        return f'Comment {self.comment}'
+
+class Subscription(db.Model):
+    __tablename__ = 'subscription'
+    id = db.Column(db.Integer,primary_key = True)
+    email = db.Column(db.String(255))
+
+    def save_email(self):
+        db.session.add(self)
+        db.session.commit()
+   
+    def __repr__(self):
+        return f'Subscription {self.email}'
        

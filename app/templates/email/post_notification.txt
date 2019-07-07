@@ -1,0 +1,7 @@
+Hi, A new post has been posted into Blogs.
+
+Topic: {{ post.topic }}
+
+Open the following link in your browser:
+
+http://127.0.0.1:5000/post/{{ post.id }}
