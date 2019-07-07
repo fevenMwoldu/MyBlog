@@ -1,27 +1,29 @@
-## News Highlights: A simple web app that displays Newssources with their articles
-Fri 21, June 2019 By ** Feven Moghes Weldu **
+## MyBlog: A simple web app that displays Blogs with desired posts
+Fri 5, June 2019 By ** Feven Moghes Weldu **
 
 ## Descrption
-A web application that displays list of News highlights and when they are clicked it will display the articles of the selected News sources.when those articles are again selected it will display the full article on the source website.
+A web application or an informational website displaying information in the reverse chronological order, with latest posts appearing first.
 
 This project was generated with [Python CLI]version 3.7
 
-## BDD(Behaviour Driven development) Given :We have list of News sources
+## BDD(Behaviour Driven development)
 When : A user wants to get the list of News sources, the application should be able to display it.
 
 Then : Then When a selected News source is clicked it should display the list of articles it have. when those articles are inturn clicked they should display the full article on the source website.
 
-| Behaviour                  | Input                                  | Output                     |
-|----------------------------|----------------------------------------|----------------------------|
-| Displays lies of behaviours|Comments and Inputs on the list of blogs|LIst of blogs are displayed |
-|types sth here              |Type sth                                |                            |
+| Behaviour                  | Input                                  | Output                              |
+|----------------------------|----------------------------------------|-------------------------------------|
+| Displays information in the|Sign in as a writter and  create blogs  |Blog posts are displayed to the users|
+|reverse chronological order |and add posts, where the users can see  |and user can read them.              |
+|with lates posts appearing  |and comment on.                         |The writer of the blog can delete com|
+|first.                      |                                        |ents and update and delete blogs.
 
 ## Setup/Installation Requirements
 clone the repository from GitHub $ git clone {GitHub repository URL}
 
 open termial and change to cloned repository $ cd {repo-name}
 
-Run ./run.py at the terminal. $ ./run.py
+Run ./run.py at the terminal. $ ./start.sh
 
 Then following onscreen instructions to operate the app.
 
