@@ -27,6 +27,7 @@
     {% for comment in post.comments %}
     <tr>
         <td>{{ comment.id }}: {{ comment.comment }}</td>
+        <td><a href="/post/{{post.id}}?cmt={{comment.id}}">Delete Comment</a></td>
     </tr>
     {% endfor %}
 </table>

@@ -113,12 +113,18 @@ def update_pic(uname):
 @main.route('/post/<int:id>', methods=['GET', 'POST'])
 @login_required
 def post(id):
-    form = CommentForm()
+    form = CommentForm()  
 
     if form.validate_on_submit():
         new_comment = Comment(comment=form.comment.data, post_id=id)
         new_comment.save_comment()
-
+    else:
+        cmt = request.args.get('cmt')
+        if cmt is not None:
+            comment = Comment.query.filter_by(id=cmt).first()
+            if comment is not None:
+                db.session.delete(comment)
+                db.session.commit()
 
     post = Post.query.filter_by(id=id).first()
     
