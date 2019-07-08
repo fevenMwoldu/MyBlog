@@ -16,5 +16,5 @@ class CommentForm(FlaskForm):
 
 class SubscriptionForm(FlaskForm):
     email = StringField('Insert your email here', validators=[DataRequired()])
-    submit = SubmitField()
+    subscribe = SubmitField()
 
