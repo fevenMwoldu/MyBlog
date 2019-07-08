@@ -11,7 +11,7 @@ Then : Then users are able to receive email alert on their websites , so that th
 
 | Behaviour                                        | Input                                  | Output                                      |
 |--------------------------------------------------|----------------------------------------|---------------------------------------------|
-|Displays information accourding to the lates post |Sign in as a writter                    |Blog posts are displayed to the users        |
+|Displays information accourding to the latest post|Sign in as a writter                    |Blog posts are displayed to the users        |
 |                                                  |create blogs                            |The writer of the blog can delete comments   |
 |                                                  |users can comment on it.                |The writer can update posts|                 |
 |                                                  |                                        |The writer can update and delete blogs.      |
