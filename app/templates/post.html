@@ -19,11 +19,10 @@
 
 <h2>{{ post.topic }}</h2>
 
-<p> {{ post.content }}</p>
+<h4> {{ post.content }}</h4>
 
-<p> {{ post.posted_on }}</p>
+<h5> {{ post.posted_on }}</h5>
 
-<p>Comments:</p>
 <table border="1">
     {% for comment in post.comments %}
     <tr>
