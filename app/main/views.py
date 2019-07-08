@@ -39,7 +39,7 @@ def index():
 
     quotes = get_quotes()
     
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.posted_on.desc()).all()
 
     return render_template('index.html', SubscriptionForm = form, quotes=quotes, posts=posts)
 
