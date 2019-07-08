@@ -9,12 +9,12 @@ When : A writter signs in and creates a blog and posts,
 
 Then : Then users are able to receive email alert on their websites , so that they are able to see and comment on it.
 
-| Behaviour                  | Input                                  | Output                              |
-|----------------------------|----------------------------------------|-------------------------------------|
-|Displays information in the |Sign in as a writter and  create blogs  |Blog posts are displayed to the users|
-|reverse chronological order |and add posts, where the users can see  |and user can read them.              |
-|with lates posts appearing  |and comment on.                         |The writer of the blog can delete com|
-|first.                      |                                        |ents and update and delete blogs.
+| Behaviour                                        | Input                                  | Output                                      |
+|--------------------------------------------------|----------------------------------------|---------------------------------------------|
+|Displays information accourding to the lates post |Sign in as a writter                    |Blog posts are displayed to the users        |
+|                                                  |create blogs                            |The writer of the blog can delete comments   |
+|                                                  |users can comment on it.                |The writer can update posts|                 |
+|                                                  |                                        |The writer can update and delete blogs.      |
 
 ## Setup/Installation Requirements
 clone the repository from GitHub $ git clone {GitHub repository URL}
